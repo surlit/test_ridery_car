@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  ridery_test_web:
+    image: odoo:16
+    container_name: ridery_test_web
+    depends_on:
+      - ridery_test_db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ridery_test_web_data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons/:/mnt/extra-addons
+
+  ridery_test_db:
+    image: postgres:12
+    container_name: ridery_test_db
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ridery_test_db_data:/var/lib/postgresql/data/pgdata
+
+
+volumes:
+  ridery_test_web_data:
+  ridery_test_db_data:
+

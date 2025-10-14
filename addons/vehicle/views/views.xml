@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="vehicle.list">
+      <field name="name">vehicle list</field>
+      <field name="model">vehicle.vehicle</field>
+      <field name="arch" type="xml">
+        <tree>
+      <field name="res_id"/>
+          <field name="plate"/>
+          <field name="model"/>
+          <field name="brand"/>
+          <field name="year"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="vehicle.vehicle_view_form" model="ir.ui.view">
+      <field name="name">Vehicle Form</field>
+      <field name="model">vehicle.vehicle</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="res_id" domain="[('user_ids.groups_id', 'in', [13])]"/>
+              <field name="plate"/>
+              <field name="model"/>
+              <field name="brand"/>
+              <field name="year"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="vehicle.vehicle_search" model="ir.ui.view">
+      <field name="name">Vehicle Search</field>
+      <field name="model">vehicle.vehicle</field>
+      <field name="arch" type="xml">
+        <search string="">
+            <field name="res_id"/>
+            <field name="plate"/>
+            <field name="model"/>
+            <field name="brand"/>
+            <field name="year"/>
+        </search>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="vehicle.action_window">
+      <field name="name">HOME </field>
+      <field name="res_model">vehicle.vehicle</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="VEHICLE" id="vehicle.menu_root" action="vehicle.action_window"/>
+
+    <!-- menu categories -->
+
+    <!-- <menuitem name="Register" id="vehicle.menu_1" parent="vehicle.menu_root"/> -->
+    <!-- <menuitem name="Menu 2" id="vehicle.menu_2" parent="vehicle.menu_root"/> -->
+
+    <!-- actions -->
+
+    <!-- <menuitem name="VEHICLE" id="vehicle.menu_1_list" parent="vehicle.menu_root"
+              /> -->
+    
+
+  </data>
+</odoo>
