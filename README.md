@@ -1,2 +1,2 @@
 # test_ridery_car
-A test 
+A test tecnical
