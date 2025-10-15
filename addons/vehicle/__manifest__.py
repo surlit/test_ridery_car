@@ -25,11 +25,13 @@
 
     # always loaded
     'data': [
-        'security/groups.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
         
         'views/views.xml',
-        'views/templates.xml',
+        'views/res_partner_customizer.xml',
+        'views/vehicle_modal.xml',        
+        
     ],
     # only loaded in demonstration mode
     'demo': [
