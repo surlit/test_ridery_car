@@ -14,6 +14,7 @@
                     string="Search Vehicles" 
                     class="oe_stat_button btn-primary"
                     icon="fa-car"    
+                    groups="vehicle.group_vehicle_user"
                 />
                 <button 
                     name="send_vehicles_user" 
@@ -21,6 +22,7 @@
                     string="Send Vehicles" 
                     class="oe_stat_button btn-primary"
                     icon="fa-car"
+                    groups="vehicle.group_vehicle_user"
                     
                 />
             </xpath>
