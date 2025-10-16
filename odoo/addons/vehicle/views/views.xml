@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="vehicle_list">
+      <field name="name">vehicle list</field>
+      <field name="model">vehicle.vehicle</field>
+      <field name="arch" type="xml">
+        <tree string="view list">
+          <field name="sequence" />
+          <field name="name"/>
+          <field name="res_id"/>
+          <field name="plate"/>
+          <field name="brand"/>
+          <field name="model"/>
+          <field name="year"/>
+          <field name="status"/>
+          <field name="image" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="vehicle.vehicle_view_form" model="ir.ui.view">
+      <field name="name">Vehicle Form</field>
+      <field name="model">vehicle.vehicle</field>
+      <field name="arch" type="xml">
+        <form string="view form">
+          <sheet>
+            <group>
+              <field name="sequence" />
+              <field name="name"/>
+              <field name="res_id" />
+              <field name="plate"/>
+              <field name="brand"/>
+              <field name="model"/>
+              <field name="year"/>
+              <field name="status"/>
+              <field name="image" widget="image" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="vehicle.vehicle_search" model="ir.ui.view">
+      <field name="name">Vehicle Search</field>
+      <field name="model">vehicle.vehicle</field>
+      <field name="arch" type="xml">
+        <search string="">
+            <field name="sequence" />
+            <field name="name"/>
+            <field name="res_id"/>
+            <field name="plate"/>
+            <field name="model"/>
+            <field name="brand"/>
+            <field name="year"/>
+            
+        </search>
+      </field>
+    </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="vehicle.action_window">
+      <field name="name">Home </field>
+      <field name="res_model">vehicle.vehicle</field>
+      <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Vehicle" id="vehicle.menu_root" action="vehicle.action_window"/>
+    
+  </data>
+</odoo>

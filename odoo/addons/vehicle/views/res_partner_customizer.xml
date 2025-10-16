@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>    
+    <record id="smart_button" model="ir.ui.view">
+        <field name="name">smart_button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Ejemplo: Agregar botón al final de la pestaña "Información general" -->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                
+                <button 
+                    name="search_vehicle_user" 
+                    type="object" 
+                    string="Search Vehicles" 
+                    class="oe_stat_button btn-primary"
+                    icon="fa-car"    
+                />
+                <button 
+                    name="send_vehicles_user" 
+                    type="object" 
+                    string="Send Vehicles" 
+                    class="oe_stat_button btn-primary"
+                    icon="fa-car"
+                    
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

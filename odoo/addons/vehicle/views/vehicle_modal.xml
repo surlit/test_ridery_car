@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+    
+        <record id="vehicle_modal_view_tree" model="ir.ui.view">
+        <field name="name">vehicle.modal.view.tree</field>
+        <field name="model">vehicle.vehicle</field>
+        <field name="arch" type="xml">
+            <tree create="False" delete="False" edit="False" default_order="plate" string="Modal vehicles asociated">
+                <field name="name"/>
+                <field name="res_id"/>
+                <field name="plate"/>
+                <field name="year"/>
+                <button 
+                    name="send_vehicle" 
+                    type="object" 
+                    string="Send Vehicle"
+                    icon="fa-car"
+                    class="btn-primary"
+                />
+            </tree>
+        </field>
+        </record>
+    </data>    
+
+</odoo>
