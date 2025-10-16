@@ -4,6 +4,7 @@ Pasos a seguir para poder ejecutar el
 1. Clonar repositorio 
 2. abrir la terminal de su preferencia bash zsh 
 3. ubicarse en la raiz del repositorio
+3.1 arreglar el nombre de env.txt a .env y luego colocar los datos correspondientes a su equipo local, host, port, y nombre de la bd que creo en odoo, usuario admin y clave admin
 4.1  Ejecucion semiautomatica
     1. darle permisos al script init_setup.bash con el comando sudo chmod +x init_setup.bash
     2. Ejecutar el sistema con el comando ./init_setup.bash 

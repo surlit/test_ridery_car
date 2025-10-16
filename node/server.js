@@ -1,15 +1,16 @@
 // server.js
+require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
 const PORT = 3000;
 const xmlrpc = require('xmlrpc')
-const odoo_url = '192.168.100.155'
-const odoo_port = '8069'
-const db = 'test_ridery_db'
-const username = 'admin'
-const password = '123'
+const odoo_url = process.env.odoo_url
+const odoo_port = process.env.odoo_port
+const db = process.env.db_odoo
+const username = process.env.username_admin 
+const password = process.env.password_admin
 
 
 // Middleware para parsear JSON
@@ -84,5 +85,5 @@ function create_logs(uid,data,res){
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`🚀 API de los logs de vehículos corriendo en http://localhost:${PORT}`);
-
+        
 });
