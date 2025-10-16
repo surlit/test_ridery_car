@@ -21,7 +21,7 @@
     'version': '1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','vehicle'],
+    'depends': ['base','vehicle','contacts'],
 
     # always loaded
     'data': [

@@ -15,7 +15,7 @@ class vehicle(models.Model):
     brand = fields.Char(string='Brand', required=True)
     model = fields.Char(string='Model', required=True)
     plate = fields.Char(string='Plate', required=True,size=8)
-    year = fields.Char(string='Year', required=True)
+    year = fields.Char(string='Year', required=True,size=4)
     status = fields.Boolean(string='Activo')
     image = fields.Image(stirng='Image',max_width=512, max_height=512)
     sequence = fields.Char(string="Code", readonly=True, copy=False,default='')
@@ -25,6 +25,7 @@ class vehicle(models.Model):
       for vals in vals_list:
             
             vals['sequence'] = self.env['ir.sequence'].next_by_code('vehicle.vehicle') or '/'
+            vals['name'] = f"{vals['brand']} {vals['model']}"
       return super().create(vals_list)
     
     def send_vehicle(self):
@@ -33,7 +34,6 @@ class vehicle(models.Model):
             data = [
                         {
                         'text':{
-                              'name':self.name,
                               'res_id':str(self.res_id.name),
                               'code':self.sequence,
                               'brand':self.brand,

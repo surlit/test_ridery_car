@@ -38,12 +38,12 @@ class ResPartnerCustomizer(models.Model):
         for vehicle in vehicles_ids:
             list_vehicles.append({
                 'text':{
-                    'name':vehicle.name,
                     'res_id':str(vehicle.res_id.name),
                     'code':vehicle.sequence,
                     'brand':vehicle.brand,
                     'model':vehicle.model,
                     'year':vehicle.year,
+                    'plate':vehicle.plate,
                 },
                 'status':'Activo' if vehicle.status else 'Inactivo' 
 

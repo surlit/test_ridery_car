@@ -8,7 +8,6 @@
       <field name="arch" type="xml">
         <tree string="view list">
           <field name="sequence" />
-          <field name="name"/>
           <field name="res_id"/>
           <field name="plate"/>
           <field name="brand"/>
@@ -28,14 +27,15 @@
           <sheet>
             <group>
               <field name="sequence" />
-              <field name="name"/>
               <field name="res_id" />
               <field name="plate"/>
               <field name="brand"/>
               <field name="model"/>
               <field name="year"/>
-              <field name="status"/>
-              <field name="image" widget="image" />
+              <field name="status"/>              
+            </group>
+            <group>
+              <field name="image" widget="image" class="oe_left"/>
             </group>
           </sheet>
         </form>

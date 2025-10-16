@@ -8,8 +8,8 @@
         <field name="model">vehicle.vehicle</field>
         <field name="arch" type="xml">
             <tree create="False" delete="False" edit="False" default_order="plate" string="Modal vehicles asociated">
-                <field name="name"/>
-                <field name="res_id"/>
+                <field name="brand"/>
+                <field name="model"/>
                 <field name="plate"/>
                 <field name="year"/>
                 <button 
